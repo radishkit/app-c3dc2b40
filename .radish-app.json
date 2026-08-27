@@ -1,17 +1,23 @@
 {
   "$schema": "https://radishkit.com/schemas/radish-app.json",
-  "name": "Accela Dashboard",
+  "name": "Valet Parking Permit Portal",
   "version": "1.0.0",
-  "description": "Records dashboard with search, filters, and view toggle",
+  "description": "Citizen-facing portal for applying for and tracking valet parking permits in the City of Null Island",
   "template": "accela-dashboard",
+  "appId": "c3dc2b40-3583-4b4c-9fc1-769d58921fd7",
+  "agencyId": "f4dfaeaa-dde2-48e8-8537-0e63cc63d27d",
   "runtime": {
     "entrypoint": "src/main.tsx",
     "framework": "react",
     "bundler": "vite"
   },
-  "connectors": ["accela"],
+  "connectors": [
+    "accela"
+  ],
   "permissions": {
-    "network": ["accela"],
+    "network": [
+      "accela"
+    ],
     "storage": false
   }
 }
