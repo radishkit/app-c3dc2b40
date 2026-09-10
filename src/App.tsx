@@ -26,36 +26,6 @@ export default function App() {
 
   return (
     <div className="portal">
-      <nav className="topnav">
-        <button className="topnav__brand" onClick={() => go({ name: 'landing' })}>
-          <span className="topnav__seal" aria-hidden>◎</span>
-          <span>
-            <strong>City of Null Island</strong>
-            <em>Valet Parking Permits</em>
-          </span>
-        </button>
-        <div className="topnav__links">
-          <button
-            className={view.name === 'landing' ? 'is-active' : ''}
-            onClick={() => go({ name: 'landing' })}
-          >
-            Home
-          </button>
-          <button
-            className={view.name === 'apply' ? 'is-active' : ''}
-            onClick={() => go({ name: 'apply' })}
-          >
-            Apply
-          </button>
-          <button
-            className={view.name === 'permits' || view.name === 'status' ? 'is-active' : ''}
-            onClick={() => go({ name: 'permits' })}
-          >
-            My Permits
-          </button>
-        </div>
-      </nav>
-
       {view.name === 'landing' && <Landing go={go} />}
       {view.name === 'apply' && <Wizard go={go} onSubmitted={refresh} />}
       {view.name === 'confirmation' && <Confirmation permit={view.permit} go={go} />}
