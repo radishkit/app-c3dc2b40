@@ -5,6 +5,7 @@ import { Confirmation } from './views/Confirmation';
 import { MyPermits } from './views/MyPermits';
 import { StatusTracker } from './views/StatusTracker';
 import { Permit, loadPermits } from './data';
+import { TopBar } from './app/TopBar';
 
 export type View =
   | { name: 'landing' }
@@ -26,6 +27,7 @@ export default function App() {
 
   return (
     <div className="portal">
+      <TopBar onHome={() => go({ name: 'landing' })} />
       {view.name === 'landing' && <Landing go={go} />}
       {view.name === 'apply' && <Wizard go={go} onSubmitted={refresh} />}
       {view.name === 'confirmation' && <Confirmation permit={view.permit} go={go} />}
